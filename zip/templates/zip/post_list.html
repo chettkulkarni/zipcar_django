@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+    <head>
+        <title>ZipCar</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/zip.css' %}">
+    </head>
+    <body>
+        <div>
+            <h2><a href="/">Cars</a></h2>
+        </div>
+        {% for car in cars %}
+            <div>
+                <li>
+                    <h2><a href="">{{ car }}</a></h2>
+                </li>
+            </div>
+        {% endfor %}
+    </body>
+</html>
