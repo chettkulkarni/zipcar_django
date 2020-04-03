@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="/car_search" method="GET">
+        <input type="text" name='car_model_search' placeholder="car model of interest">
+        <input type="submit" value="Save" />
+    </form>
+{% endblock %}
