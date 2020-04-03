@@ -25,7 +25,7 @@ SECRET_KEY = 'yiml(g$gz#)@9p=bcfwyw*=jhusxqjx4&isas-9iivjbn85qaz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.herukoapp.com','*']
 
 
 # Application definition
