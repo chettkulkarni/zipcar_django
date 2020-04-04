@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>zip car base</title>
-    </head>
-    <body>
-        <p>
-            this webpage has following urls at this point
-            <ul>
-            <li>1) <a href=/admin> admin end to add user info and car info</a></li>
-            <li>2) <a href=/cars >  to see the car lists</a></li>
-            <li>3) <a href=/users > to see the user lists</a></li>
-            <li>4) <a href=/car_search_form> to search car</a></li>
-            <li>5) <a href=/user_search_form>  to search car</a></li>
-            <li>6) <a href=/car_create> to search car</a></li>
-            <li>7) <a href=/user_create> to search car</a></li>
-            <li>8) <a href=/ > holds base listing info</a></li>
 
+    <head>
+        <title>{% block title %} {% endblock title %}</title>
+        {% block head %}  {% endblock head  %}
+    </head>
+
+    <body>
+
+    <style type='text/css'>
+     .titleP{
+         margin-left: 37%;
+         font-weight: bold;
+         font-size: xx-large;
+     }
+        .navbar-item{
+            margin-left: 90%;
+            font-weight: bold;
+        }
+
+    </style>
+
+
+    <!--navigation bar-->
+    <nav class="navbar">
+        <a href= "" class="navbar-item " > Home </a>
+    </nav>
+
+
+
+
+
+        <p class = 'titleP'>
+            Welcome to Zip Car Portal
+            <ul>
+{#            <li>1) <a href=/admin> admin end to add user info and car info</a></li>#}
+{#            <li>2) <a href=/cars >  to see the car lists</a></li>#}
+{#            <li>3) <a href=/users > to see the user lists</a></li>#}
+{#            <li>4) <a href=/car_search_form> to search car</a></li>#}
+{#            <li>5) <a href=/user_search_form>  to search car</a></li>#}
+{#            <li>6) <a href=/car_create> to search car</a></li>#}
+{#            <li>7) <a href=/user_create> to search car</a></li>#}
+{#            <li>8) <a href=/ > holds base listing info</a></li>#}
             </ul>
         </p>
         {% block content %}
 
-        {% endblock %}
+        {% endblock content %}
     </body>
+
+<footer class="footer" style="background: powderblue;">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p><i>&copy; 2020 zipCar</i></p><br>
+         </div>
+    </div>
+</footer>
+
+
 </html>

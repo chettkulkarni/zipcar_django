@@ -45,3 +45,8 @@ def user_view(request):
 
 def user_search_form_view(request):
     return render(request, 'zip/user_search.html')
+
+def user_login(request):
+    return render(request, 'account/login.html')
+def user_register(request):
+    return render(request, 'account/register.html')

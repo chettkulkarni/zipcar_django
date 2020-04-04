@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <meta charset="utf-8"><metahttp-equiv="X-UA-Compatible"content="IE=edge"><metaname="viewport"content="width=device-width, initial-scale=1">
+    <linkrel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script><linkrel="stylesheet"href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"crossorigin="anonymous">
+{% endblock head %}
+
+{% block content %}
+
+    <style type='text/css'>
+        .div-style{
+    margin-top : 1rem;
+    padding : 1rem;
+   background: rgb(169,210,88);
+background: linear-gradient(90deg, rgba(169,210,88,1) 10%, rgba(0,226,255,1) 99%);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0.5rem 1rem 0px;
+    }
+    .text-box{
+        border-radius: 1rem;
+        margin-top : 1rem;
+    }
+    .button-submit{
+        width: 8%;
+        border-radius: 1rem;
+        margin-top : 1rem
+    }
+    .main-label{
+        margin: 1rem;
+    }
+    .container{
+        margin-left:0rem;
+    }
+    .abc{
+        margin-left: 45%;
+    }
+
+
+
+    </style>
+
+
+    <div class="container">
+            <div class="div-style">
+            <form class="abc">
+                <div class=" main-label" >
+                    <h2>Register</h2>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control text-box" id="email" aria-describedby="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control text-box" id="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control text-box" id="UserName" placeholder="username">
+                </div>
+                 <div class="form-group">
+                    <input type="text" class="form-control text-box" id="LicenseNumber" placeholder="License Number">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn button-submit">Sign Up</button>
+                </div>
+            </form>
+            </div>
+    </div>
+
+{% endblock content %}
