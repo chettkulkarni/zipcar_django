@@ -9,13 +9,12 @@ def user_search_view(request):
     form = request.GET
     user_search_query=form.get('user_search',None)
     users=User.objects.filter(first_name__contains=user_search_query)
-
+    
     context={
         'users' : users
     }
 
     return render(request,'zip/user_detail.html', context )
-    pass
 
 def user_create_view(request):
     
@@ -48,5 +47,6 @@ def user_search_form_view(request):
 
 def user_login(request):
     return render(request, 'account/login.html')
+
 def user_register(request):
     return render(request, 'account/register.html')
