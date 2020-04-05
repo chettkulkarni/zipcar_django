@@ -6,7 +6,7 @@ from django.utils import timezone
 class Car(models.Model):
     owner = models.CharField(max_length=200)
     car_model=models.CharField(max_length=200)
-    
+   
     def __str__(self):
         return self.car_model
 
@@ -16,3 +16,17 @@ class User(models.Model):
 
     def __str__(self):
         return (self.first_name+self.last_name)
+
+
+STATUS_CHOICES = [
+    ("Requested", "Requested"),
+    ("Pending", "Pending"),
+    ("Rejected", "Rejected"),
+]
+
+class Transactions(models.Model):
+    user = models.CharField(max_length=200)
+    car =models.CharField(max_length=200)
+    status=models.CharField(max_length=200, choices=STATUS_CHOICES)
+    def __str__(self):
+        return (self.user+self.car+self.status)
