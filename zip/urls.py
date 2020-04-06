@@ -18,5 +18,9 @@ urlpatterns = [
     path('user_search_form', user_views.user_search_form_view),
     path('user_search', user_views.user_search_view),
     path('user_login', user_views.user_login),
-    path('user_register', user_views.user_register)
+    path('user_register', user_views.user_register),
+
+    #dash boards
+    path('user_dash', user_views.user_dash),
+    path('admin_dash', user_views.admin_dash)
 ]

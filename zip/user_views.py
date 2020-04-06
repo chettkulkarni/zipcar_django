@@ -50,3 +50,9 @@ def user_login(request):
 
 def user_register(request):
     return render(request, 'account/register.html')
+
+def user_dash(request):
+    return render(request, 'dashboards/userDash.html')
+
+def admin_dash(request):
+    return render(request, 'dashboards/adminDash.html')
