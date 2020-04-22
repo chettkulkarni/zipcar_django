@@ -18,7 +18,7 @@ def user_search_view(request):
 
 def user_create_view(request):
     
-    form = UserCreateForm(request.POST or None)
+    form = UserCreateForm(request.POST ,request.FILES)
 
     if form.is_valid():
         form.save()
