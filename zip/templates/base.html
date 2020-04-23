@@ -1,123 +1,82 @@
+{% load static %}
+
 <!DOCTYPE html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <title>ZipCar</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+  <body>
+    <nav class="navbar navbar-default navbar-inverse">
+      <div class="container">
+        <ul class="nav navbar-nav">
 
-    <head>
-        <title>{% block title %} {% endblock title %}</title>
+          <li><a class="navbar-brand" href="{% url 'index' %}">ZipCar</a></li>
+          <li><a class="navbar-link" href="/admin">Admin</a></li>
 
-        {% block head %}  {% endblock head  %}
+          <!-- {% if not user.is_authenticated %}
+          <li><a class="navbar-link" href="{% url 'register' %}">Register</a></li> 
+          {% endif %} -->
 
-     <meta charset="utf-8"><metahttp-equiv="X-UA-Compatible"content="IE=edge"><metaname="viewport"content="width=device-width, initial-scale=1">
-    <linkrel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script><linkrel="stylesheet"href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"crossorigin="anonymous">
-
-
-    <!-- java script load-->
-    <script src="static/js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-			<script src="static/js/vendor/bootstrap.min.js"></script>
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  			<script src="static/js/easing.min.js"></script>
-			<script src="static/js/hoverIntent.js"></script>
-			<script src="static/js/superfish.min.js"></script>
-			<script src="static/js/jquery.ajaxchimp.min.js"></script>
-			<script src="static/js/jquery.magnific-popup.min.js"></script>
-			<script src="static/js/owl.carousel.min.js"></script>
-			<script src="static/js/jquery.sticky.js"></script>
-			<script src="static/js/jquery.nice-select.min.js"></script>
-			<script src="static/js/waypoints.min.js"></script>
-			<script src="static/js/jquery.counterup.min.js"></script>
-			<script src="static/js/parallax.min.js"></script>
-			<script src="static/js/mail-script.js"></script>
-			<script src="static/js/main.js"></script>
-
-    <!--css load-->
-     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-			<!--
-			CSS
-			============================================= -->
-			<link rel="stylesheet" href="static/css/linearicons.css">
-			<link rel="stylesheet" href="static/css/font-awesome.min.css">
-			<link rel="stylesheet" href="static/css/bootstrap.css">
-			<link rel="stylesheet" href="static/css/magnific-popup.css">
-			<link rel="stylesheet" href="static/css/nice-select.css">
-			<link rel="stylesheet" href="static/css/animate.min.css">
-			<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-			<link rel="stylesheet" href="static/css/owl.carousel.css">
-			<link rel="stylesheet" href="static/css/main.css">
-
-
-    </head>
-
-    <body>
-
-    <style type='text/css'>
-     .titleP{
-         margin-left: 37%;
-         font-weight: bold;
-         font-size: xx-large;
-     }
-        .navbar-item{
-            margin-left: 90%;
-            font-weight: bold;
-        }
-
-     .text-box{
-        border-radius: 1rem;
-        margin-top : 1rem;
-    }
-    .button-submit{
-        width: 15%;
-        border-radius: 1rem;
-        margin-top : 1rem
-    }
-    .main-label{
-        margin: 1rem;
-    }
-    .container{
-        margin-left:0rem;
-    }
-
-
-    </style>
-
-
-    <!--navigation bar-->
-    <nav class="navbar">
-        <a href= "" class="navbar-item " > Home </a>
-    </nav>
-
-
-
-
-
-        <p class = 'titleP'>
-            Welcome to Zip Car Portal
-            <ul>
-{#            <li>1) <a href=/admin> admin end to add user info and car info</a></li>#}
-{#            <li>2) <a href=/cars >  to see the car lists</a></li>#}
-{#            <li>3) <a href=/users > to see the user lists</a></li>#}
-{#            <li>4) <a href=/car_search_form> to search car</a></li>#}
-{#            <li>5) <a href=/user_search_form>  to search car</a></li>#}
-{#            <li>6) <a href=/car_create> to search car</a></li>#}
-{#            <li>7) <a href=/user_create> to search car</a></li>#}
-{#            <li>8) <a href=/ > holds base listing info</a></li>#}
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Explore Cars
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href='/cars'>See All Cars</a></li>
+              <li><a href="/car_search_form"> Search Cars</a></li>
+              <li><a href="/car_create">Create Car</a></li>
+              <!-- <li><a href="#">Page 1-3</a></li> -->
             </ul>
-        </p>
-        {% block content %}
-
-        {% endblock content %}
-    </body>
-
-<footer class="footer" style="background: powderblue;">
+          </li>
+        </ul>
+          {% if user.is_authenticated %}
+            
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><button href="{% url 'logout' %}" class="btn btn-danger navbar-btn">Logout</button></li> -->
+            <li><a>{{user.username}} </a></li>
+            <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+            </ul>>
+          {% else %}
+          <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a class="navbar-link" href="{% url 'register' %}">Register</a></li>  -->
+          <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+          <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          
+        </ul>>
+          {% endif %}
+</ul>
+      </div>
+    </nav>
     <div class="container">
-        <div class="content has-text-centered">
-            <p><i>&copy; 2020 zipCar</i></p><br>
-         </div>
+    
+    <p class = 'titleP'>
+        Welcome to Zip Car Portal
+    </ul>
+    </p>
+    {% block block_body %}
+
+    {% endblock block_body %}
+
+
+    {% if user.is_authenticated %}
+    {% block content %}
+
+    {% endblock content %}
+    {% else %}
+    <p>log in please</p>
+    {% endif %}
     </div>
-</footer>
-
-
+  </body>
 </html>
+

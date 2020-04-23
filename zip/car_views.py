@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Car,User,Transactions
+from .models import Car,Person,Transactions
 from django.http import HttpResponse
 from .forms import CarCreateForm
 
@@ -44,6 +44,7 @@ def car_view(request):
     context={
         'cars' : cars
     }
+    print('chooot vol 1',context)
     return render(request, 'zip/car_detail.html', context)
 
 def car_request_view(request,car):
@@ -51,8 +52,9 @@ def car_request_view(request,car):
     # User.objects.filer to see if user is legit or not
     # See if car is available or not
     # if user exists and car exists register it
-    user='requested_user_id_comes_here'
-    status='Pending'
-    transaction=Transactions(user=user,car=car,status=status)
-    transaction.save()
-    return render(request, 'zip/car_search.html')
+    if request.user.is_authenticated:
+        user=request.user.get_username()
+        status='Pending'
+        transaction=Transactions(user=user,car=car,status=status)
+        transaction.save()
+        return render(request, 'zip/car_search.html')
