@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Car,User
 from django.http import HttpResponse
-from .forms import UserCreateForm
+from .forms import UserCreateForm ,UserForm
 
 # Create your views here.
 
@@ -42,14 +42,31 @@ def user_view(request):
     
     return render(request, 'zip/user_detail.html', context)
 
+
+def user_login(request):
+    form = UserForm(request.POST, request.FILES)
+
+    if form.is_valid():
+        form.save()
+        form = UserCreateForm()
+
+    else:
+        print('form error')
+
+    context = {
+        'form': form
+    }
+
+    return render(request, 'registration/login.html', context)
+
 def user_search_form_view(request):
     return render(request, 'zip/user_search.html')
 
-def user_login(request):
-    return render(request, 'account/login.html')
+# def user_login(request):
+#     return render(request, 'registration/login.html')
 
 def user_register(request):
-    return render(request, 'account/register.html')
+    return render(request, 'registration/register.html')
 
 def user_dash(request):
     return render(request, 'dashboards/userDash.html')
